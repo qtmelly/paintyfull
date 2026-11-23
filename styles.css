@@ -1,0 +1,153 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+:root {
+  --couleur-h1: #369eff;
+  --couleur-gris: #3e3e3e;
+  --couleur-petit-text: #808080;
+  --couleur-carte-orange: #fbdf93;
+  --couleur-carte-verte: #d3fb93;
+  --couleur-carte-violet: #e193fb;
+  --couleur-carte-cyan: #93f0fb;
+  --couleur-carte-jaune: #f7fb93;
+  --couleurs-cartes-textes: #1e1e1e;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing:;
+}
+
+body {
+  height: 100vh;
+  font-family: "Inter", sans-serif;
+}
+
+.carte-principale {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.carte1 {
+  display: flex;
+  align-items: center;
+  padding: 50px 20px;
+  width: 50%;
+  justify-content: space-around;
+}
+
+.textes {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+h1 {
+  color: var(--couleur-h1);
+  font-weight: 900;
+  font-size: 58px;
+}
+
+h3 {
+  color: var(--couleur-gris);
+  font-weight: 900;
+  font-size: 32px;
+}
+
+.ptitexte {
+  font-size: 16px;
+  color: var(--couleur-petit-text);
+  font-weight: 400;
+}
+svg {
+  align-self: end;
+  width: 50%;
+  max-width: 100%;
+}
+
+.carte {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  padding-bottom: 30px;
+}
+
+.grid {
+  display: grid;
+  height: 50vh;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-areas: "a b c d e";
+}
+
+.orange {
+  display: flex;
+  background-color: var(--couleur-carte-orange);
+  grid-area: a;
+}
+
+.vert {
+  background-color: var(--couleur-carte-verte);
+  grid-area: b;
+  display: flex;
+  flex-direction: column;
+}
+
+.violet {
+  background-color: var(--couleur-carte-violet);
+  grid-area: c;
+  display: flex;
+  flex-direction: column;
+}
+
+.cyen {
+  background-color: var(--couleur-carte-cyan);
+  grid-area: d;
+  display: flex;
+  flex-direction: column;
+}
+
+.jaune {
+  background-color: var(--couleur-carte-jaune);
+  grid-area: e;
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (max-width: 900px) {
+  .grid {
+    height: 65vh;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-areas:
+      "a a b c"
+      "d d e e";
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .carte1 {
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  svg {
+    width: 200px;
+  }
+
+  .grid {
+    height: auto;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas:
+      "a"
+      "b"
+      "c"
+      "d"
+      "e";
+  }
+
+  .carte {
+    height: 180px;
+  }
+}
